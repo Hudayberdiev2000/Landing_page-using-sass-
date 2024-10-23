@@ -7,9 +7,13 @@
     "build": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next build",
     "build:local": "prettier --write . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:styles": "stylelint '**/*.{css,scss}'",
+    "lint:styles:fix": "stylelint '**/*.{css,scss}' --fix",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "lint:all": "npm run lint:fix && npm run lint:styles:fix && npm run format",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "^15.0.1",
@@ -32,6 +36,8 @@
     "stylelint": "^16.10.0",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-selector-bem-pattern": "^4.0.1",
     "typescript": "^5.6.3"
   }
 }

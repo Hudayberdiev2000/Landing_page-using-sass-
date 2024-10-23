@@ -3,7 +3,36 @@
     "stylelint-config-standard-scss",
     "stylelint-config-prettier-scss"
   ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss",
+    "stylelint-selector-bem-pattern"
+  ],
   "rules": {
-    "selector-class-pattern": null
+    "order/properties-alphabetical-order": true,
+
+    "max-nesting-depth": 3,
+
+    "declaration-no-important": true,
+
+    "selector-pseudo-element-colon-notation": "single",
+
+    "property-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+
+    "plugin/selector-bem-pattern": {
+      "preset": "bem",
+      "componentSelectors": {
+        "initial": "^[a-z]+(?:-[a-z]+)*(?:__[a-z]+(?:-[a-z]+)*)?(?:--[a-z]+(?:-[a-z]+)*)?$"
+      },
+      "utilitySelectors": "^\\.u-[a-z]+(?:-[a-z]+)*$"
+    },
+
+    "scss/at-import-no-partial-leading-underscore": true,
+    "scss/at-extend-no-missing-placeholder": true,
+    "scss/dollar-variable-pattern": "^[_a-z][a-z0-9-]*$",
+    "scss/percent-placeholder-pattern": "^[_a-z][a-z0-9-]*$"
   }
 }

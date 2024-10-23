@@ -6,3 +6,12 @@ node_modules
 next-env.d.ts
 next.config.ts
 yarn.lock
+dist
+coverage
+package.json
+./*config.json
+lint-staged.config.js
+.husky
+.vscode
+.eslintrc.json
+public

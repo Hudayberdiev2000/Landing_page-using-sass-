@@ -2,7 +2,7 @@
 module.exports = {
   root: true,
   extends: ['next/core-web-vitals', 'prettier'],
-  plugins: ['@typescript-eslint', 'tailwindcss'],
+  plugins: ['@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -22,4 +22,9 @@ module.exports = {
       ],
     },
   ],
+  settings: {
+    react: {
+      version: 'detect', // Automatically detect the version of React to use
+    },
+  },
 };
