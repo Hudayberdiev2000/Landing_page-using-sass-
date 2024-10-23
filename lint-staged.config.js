@@ -1,11 +1,11 @@
 /* eslint-env node */
 const path = require('path');
-const formatCommand = [
-  'eslint . --ext .js,.jsx,.ts,.tsx --fix',
-  'prettier . --write',
-  'stylelint --allow-empty-input --fix **/*.{css,scss}',
-];
 
 module.exports = {
-  '*': formatCommand,
+  // Run ESLint and Prettier on JS, JSX, TS, and TSX files
+  '*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'],
+  // Run Prettier and Stylelint on CSS and SCSS files
+  '*.{css,scss}': ['prettier --write', 'stylelint --fix'],
+  // Run Prettier on JSON and Markdown files
+  '*.{json,md}': ['prettier --write'],
 };
