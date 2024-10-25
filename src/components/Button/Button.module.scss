@@ -1,0 +1,23 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.button {
+  border-radius: $br-md;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  gap: map.get($spacing, 'xxxs');
+  letter-spacing: -0.02em;
+  padding: 1rem 1.5rem;
+  @include flex-row(center, center);
+
+  &--primary {
+    background-color: $black;
+    color: $white;
+  }
+
+  &--text {
+    background-color: transparent;
+    color: $black;
+    padding: 0;
+  }
+}

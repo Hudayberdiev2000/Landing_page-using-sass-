@@ -1,0 +1,16 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.ticker {
+  &__container {
+    padding: map.get($spacing, 'xl');
+  }
+
+  &__logos {
+    @include flex-row(flex-start, center);
+
+    gap: map.get($spacing, 'xl');
+    mask-image: linear-gradient(to right, transparent, black, transparent);
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,29 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.banner {
+  background-color: $background-black;
+  color: $text-white;
+  gap: map.get($spacing, 'xxs');
+  padding: map.get($spacing, xxs) 0;
+  @include flex-row(center);
+
+  &__text {
+    color: $text-white-60;
+    display: block;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__action {
+    @include center-flex;
+
+    gap: map.get($spacing, 'xxs');
+  }
+
+  &__icon {
+    height: 1.6rem;
+  }
+}

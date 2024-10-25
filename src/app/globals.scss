@@ -1,0 +1,95 @@
+@import '../sass/all';
+
+:root {
+  --dark-blue: #{$dark-blue};
+  --black: #{$black};
+  --black-60: #{$black-60};
+  --white: #{$white};
+  --white-60: #{$white-60};
+  --gradient-white-silver: #{$gradient-white-silver};
+  --gradient-blue-light: #{$gradient-blue-light};
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  text-rendering: optimizespeed;
+}

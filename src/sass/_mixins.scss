@@ -1,0 +1,72 @@
+/* =============================================
+=            Mixins                           =
+============================================= */
+
+/**
+ *
+ * Helpful reusable function-like things that will be used to implement
+ * styles for components.
+ *
+ */
+@use 'sass:map';
+
+@mixin center-flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-row($justify: flex-start, $align: stretch, $wrap: nowrap) {
+  align-items: $align;
+  display: flex;
+  flex-flow: row $wrap;
+  justify-content: $justify;
+}
+
+@mixin flex-column($justify: flex-start, $align: stretch, $wrap: nowrap) {
+  align-items: $align;
+  display: flex;
+  flex-flow: column $wrap;
+  justify-content: $justify;
+}
+
+@mixin margin($direction, $size) {
+  margin-#{$direction}: map.get($spacing, $size);
+}
+
+@mixin padding($direction, $size) {
+  padding-#{$direction}: map.get($spacing, $size);
+}
+
+@mixin mobile {
+  @media (max-width: map.get($breakpoints, 'sm')) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: map.get($breakpoints, 'md')) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: map.get($breakpoints, 'lg')) {
+    @content;
+  }
+}
+
+@mixin heading-styles($type: 'h2') {
+  background: linear-gradient(180deg, #000 0%, #001354 100%);
+  background-clip: text;
+  color: transparent;
+  font-weight: $fw-bold;
+  letter-spacing: -0.065em;
+  line-height: 1;
+
+  @if $type == 'h1' {
+    font-size: map.get($fs, 4xl);
+  } @else {
+    font-size: map.get($fs, 3xl);
+  }
+}

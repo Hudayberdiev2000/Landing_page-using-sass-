@@ -1,0 +1,106 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.hero {
+  background-image: $gradient-blue-light;
+  overflow-x: clip;
+  @include padding('top', 'lg');
+  @include padding('bottom', 'xl');
+
+  @include tablet {
+    padding-top: 0;
+  }
+
+  &__container {
+    @include flex-row(flex-start, center);
+
+    @include tablet {
+      flex-direction: column;
+      gap: map.get($spacing, 'xxl');
+    }
+  }
+
+  &__text-box {
+    gap: map.get($spacing, 'lg');
+    width: 50rem;
+    @include flex-column;
+
+    @include tablet {
+      gap: map.get($spacing, 'md');
+      margin-top: map.get($spacing, 'xl');
+      width: 100%;
+    }
+  }
+
+  &__heading {
+    @include heading-styles('h1');
+
+    @include tablet {
+      font-size: 5.4rem;
+    }
+  }
+
+  &__description {
+    color: $dark-blue;
+    font-size: $fs-lg;
+    letter-spacing: -0.036em;
+  }
+
+  &__buttons {
+    @include flex-row;
+
+    gap: map.get($spacing, 'xs');
+  }
+
+  &__img-wrapper {
+    flex: 1 1 0%;
+    height: 64.8rem;
+    position: relative;
+
+    @include tablet {
+      height: min-content;
+    }
+  }
+
+  &__cog-img,
+  &__cylinder-img,
+  &__noodle-img {
+    position: absolute;
+  }
+
+  &__cog-img {
+    height: 100%;
+    max-width: none;
+    width: auto;
+
+    @include laptop {
+      transform: translate(0, 0);
+    }
+
+    @include tablet {
+      height: auto;
+      max-width: inherit;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  &__cylinder-img {
+    left: -12.8rem;
+    top: -3.2rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__noodle-img {
+    bottom: -12rem;
+    right: -11rem;
+    transform: rotate(30deg);
+
+    @include laptop {
+      display: none;
+    }
+  }
+}

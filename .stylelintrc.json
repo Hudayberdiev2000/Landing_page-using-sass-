@@ -32,7 +32,7 @@
 
     "scss/at-import-no-partial-leading-underscore": true,
     "scss/at-extend-no-missing-placeholder": true,
-    "scss/dollar-variable-pattern": "^[_a-z][a-z0-9-]*$",
+    "scss/dollar-variable-pattern": null,
     "scss/percent-placeholder-pattern": "^[_a-z][a-z0-9-]*$"
   }
 }

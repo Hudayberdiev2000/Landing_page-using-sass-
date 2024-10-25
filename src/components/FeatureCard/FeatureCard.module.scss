@@ -1,0 +1,19 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.feature {
+  gap: map.get($spacing, xs);
+  max-width: 26rem;
+  padding: map.get($spacing, lg) 0;
+  @include flex-column(flex-start, flex-start);
+
+  &__icon {
+    height: 2.4rem;
+  }
+
+  &__heading {
+    font-size: $fs-md;
+    font-weight: $fw-bold;
+    letter-spacing: -0.031em;
+  }
+}

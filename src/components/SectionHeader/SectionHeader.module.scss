@@ -1,0 +1,17 @@
+@import '../../sass/all';
+
+.header {
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 54rem;
+  text-align: center;
+  @include flex-column(flex-start, center);
+
+  &__heading {
+    @include heading-styles;
+  }
+
+  &__description {
+    font-size: $fs-lg;
+  }
+}

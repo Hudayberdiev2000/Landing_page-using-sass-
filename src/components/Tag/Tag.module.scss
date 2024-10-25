@@ -1,0 +1,13 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.tag {
+  border: 1px solid $border-color;
+  border-radius: $br-md;
+  display: inline-block;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  letter-spacing: -0.025em;
+  padding: map.get($spacing, 'xxxs') map.get($spacing, 'xxs');
+  text-align: left;
+}
