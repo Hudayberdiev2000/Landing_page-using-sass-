@@ -1,0 +1,43 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.testimonials {
+  $this: &;
+
+  padding: map.get($spacing, 'xxl') 0;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__heading {
+    @include heading-styles;
+    @include margin('top', 'md');
+  }
+
+  &__cards {
+    @include margin('top', 'xl');
+    @include flex-row;
+
+    gap: map.get($spacing, md);
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    );
+  }
+
+  &__third-column {
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__second-column {
+    @include tablet {
+      display: none;
+    }
+  }
+}

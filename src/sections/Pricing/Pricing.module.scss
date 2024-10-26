@@ -2,11 +2,11 @@
 @import '../../sass/all';
 
 .pricing {
-  padding: map.get($spacing, xxl);
+  padding: map.get($spacing, xxl) 0;
 
   &__cards {
     @include margin('top', 'xl');
-    @include flex-row(flex-start, flex-end);
+    @include flex-row(center, flex-end);
 
     gap: map.get($spacing, md);
 

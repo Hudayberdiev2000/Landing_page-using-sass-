@@ -70,3 +70,10 @@
     font-size: map.get($fs, 3Xl);
   }
 }
+
+@mixin card-styles() {
+  background-color: $background-white;
+  border-radius: $br-lg;
+  box-shadow: $box-shadow;
+  color: $text-black;
+}

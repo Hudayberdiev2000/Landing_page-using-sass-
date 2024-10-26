@@ -7,7 +7,7 @@
   font-weight: $fw-medium;
   gap: map.get($spacing, 'xxxs');
   letter-spacing: -0.02em;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   @include flex-row(center, center);
 
   &--primary {

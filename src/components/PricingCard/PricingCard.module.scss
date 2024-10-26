@@ -2,14 +2,17 @@
 @import '../../sass/all';
 
 .card {
-  background-color: $background-white;
-  border-radius: $br-lg;
-  box-shadow: $box-shadow;
-  color: $text-black;
+  @include card-styles;
+
   gap: map.get($spacing, lg);
   padding: 4rem;
   width: 35.1rem;
   @include flex-column;
+
+  @include tablet {
+    gap: map.get($spacing, md);
+    width: 100%;
+  }
 
   &--inverse {
     background-color: $background-black;

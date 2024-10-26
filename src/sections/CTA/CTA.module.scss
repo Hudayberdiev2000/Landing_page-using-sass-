@@ -1,0 +1,58 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.cta {
+  background: $gradient-white-silver;
+  overflow: clip;
+  padding: 13rem 0;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 54rem;
+    position: relative;
+    text-align: center;
+  }
+
+  &__heading {
+    @include heading-styles;
+    @include margin(bottom, 'md');
+
+    @include tablet {
+      font-size: $fs-2Xl;
+    }
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 44.7rem;
+    @include margin(bottom, 'xl');
+
+    @include tablet {
+      @include margin(bottom, 'lg');
+    }
+  }
+
+  &__buttons {
+    @include flex-row(center);
+
+    gap: map.get($spacing, sm);
+  }
+
+  &__img {
+    position: absolute;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__star-img {
+    left: -34rem;
+    top: -13.7rem;
+  }
+
+  &__spring-img {
+    bottom: -15rem;
+    right: -33rem;
+  }
+}

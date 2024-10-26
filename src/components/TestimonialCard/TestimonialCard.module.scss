@@ -1,0 +1,30 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.card {
+  gap: map.get($spacing, md);
+  max-width: 38.4rem;
+  padding: 4rem;
+  text-align: start;
+  width: 100%;
+  @include card-styles;
+  @include flex-column;
+
+  &__info {
+    @include flex-row(flex-start, center);
+
+    gap: map.get($spacing, sm);
+  }
+
+  &__img {
+    border-radius: $br-full;
+  }
+
+  &__names {
+    @include flex-column(space-between);
+  }
+
+  &__name {
+    font-weight: $fw-semibold;
+  }
+}
