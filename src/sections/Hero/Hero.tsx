@@ -1,16 +1,27 @@
+'use client';
+
 import MainContainer from '@/components/MainContainer/MainContainer';
 import styles from './Hero.module.scss';
 import Button from '@/components/Button/Button';
-import Image from 'next/image';
 import cogImage from '../../assets/cog.png';
 import Tag from '@/components/Tag/Tag';
 import cylinderImage from '../../assets/cylinder.png';
 import noodleImage from '../../assets/noodle.png';
 import RightArrow from '@/assets/arrow-right.svg';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Hero() {
+  const heroRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start end', 'end start'],
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
-    <section className={styles.hero}>
+    <section ref={heroRef} className={styles.hero}>
       <MainContainer className={styles.hero__container}>
         <div className={styles['hero__text-box']}>
           <div>
@@ -31,21 +42,30 @@ export default function Hero() {
         </div>
 
         <div className={styles['hero__img-wrapper']}>
-          <Image
+          <motion.img
+            animate={{ translateY: [-30, 30] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'mirror',
+              duration: 3,
+              ease: 'easeInOut',
+            }}
             className={styles['hero__cog-img']}
-            src={cogImage}
+            src={cogImage.src}
             alt='Cog Image'
           />
-          <Image
+          <motion.img
+            style={{ translateY }}
             height={220}
             width={220}
-            src={cylinderImage}
+            src={cylinderImage.src}
             alt='Cylinder Image'
             className={styles['hero__cylinder-img']}
           />
 
-          <Image
-            src={noodleImage}
+          <motion.img
+            style={{ translateY, rotate: '30deg' }}
+            src={noodleImage.src}
             width={230}
             height={230}
             alt='Noodle Image'

@@ -1,3 +1,5 @@
+'use client';
+
 import MainContainer from '@/components/MainContainer/MainContainer';
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import Image from 'next/image';
@@ -8,9 +10,19 @@ import tubeImage from '@/assets/tube.png';
 import pyramidImage from '@/assets/pyramid.png';
 import { features } from '../../../data';
 
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 export default function ProductShowcase() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
   return (
-    <section className={styles.showcase}>
+    <section ref={sectionRef} className={styles.showcase}>
       <MainContainer>
         <SectionHeader
           tagLabel='Boost your productivity'
@@ -23,15 +35,17 @@ export default function ProductShowcase() {
             alt='Product Image'
             className={styles['showcase__product-image']}
           />
-          <Image
-            src={tubeImage}
+          <motion.img
+            style={{ translateY }}
+            src={tubeImage.src}
             alt='Tube Image'
             width={248}
             height={248}
             className={styles['showcase__tube-image']}
           />
-          <Image
-            src={pyramidImage}
+          <motion.img
+            style={{ translateY }}
+            src={pyramidImage.src}
             alt='Pyramid Image'
             width={262}
             height={262}
