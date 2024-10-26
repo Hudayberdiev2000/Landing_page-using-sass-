@@ -12,12 +12,21 @@ export default function Testimonials() {
         <h2 className={styles.testimonials__heading}>What our users say</h2>
 
         <div className={styles.testimonials__cards}>
-          <TestimonialColumn testimonials={testimonials.slice(0, 3)} />
+          <TestimonialColumn
+            duration={22}
+            testimonials={testimonials.slice(0, 3)}
+          />
           <div className={styles['testimonials__second-column']}>
-            <TestimonialColumn testimonials={testimonials.slice(3, 6)} />
+            <TestimonialColumn
+              duration={19}
+              testimonials={testimonials.slice(3, 6)}
+            />
           </div>
           <div className={styles['testimonials__third-column']}>
-            <TestimonialColumn testimonials={testimonials.slice(6, 9)} />
+            <TestimonialColumn
+              duration={18}
+              testimonials={testimonials.slice(6, 9)}
+            />
           </div>
         </div>
       </MainContainer>

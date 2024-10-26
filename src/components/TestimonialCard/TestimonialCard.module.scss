@@ -4,11 +4,10 @@
 .card {
   gap: map.get($spacing, md);
   max-width: 38.4rem;
-  padding: 4rem;
   text-align: start;
   width: 100%;
-  @include card-styles;
   @include flex-column;
+  @include card-styles;
 
   &__info {
     @include flex-row(flex-start, center);

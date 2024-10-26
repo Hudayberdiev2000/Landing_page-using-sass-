@@ -2,13 +2,10 @@
 @import '../../sass/all';
 
 .card {
-  border: 1px solid $border-color;
-  border-radius: $br-lg;
-  box-shadow: $box-shadow;
   min-height: 53.8rem;
-  padding: 4rem;
   width: 48.6rem;
   @include flex-column(flex-start, center);
+  @include card-styles;
 
   @include tablet {
     min-height: 48rem;
