@@ -9,6 +9,10 @@
 
   &__heading {
     @include heading-styles;
+
+    @include tablet {
+      font-size: $fs-2Xl;
+    }
   }
 
   &__description {

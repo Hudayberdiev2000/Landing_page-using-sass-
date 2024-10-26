@@ -1,0 +1,18 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.need {
+  padding: map.get($spacing, xxxl) 0;
+
+  &__cards {
+    @include flex-row;
+
+    gap: map.get($spacing, md);
+    @include margin(top, xxl);
+
+    @include laptop {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

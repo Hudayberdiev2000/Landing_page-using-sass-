@@ -65,8 +65,8 @@
   line-height: 1;
 
   @if $type == 'h1' {
-    font-size: map.get($fs, 4xl);
+    font-size: map.get($fs, 4Xl);
   } @else {
-    font-size: map.get($fs, 3xl);
+    font-size: map.get($fs, 3Xl);
   }
 }

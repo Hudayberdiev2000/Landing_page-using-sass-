@@ -1,0 +1,35 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.card {
+  border: 1px solid $border-color;
+  border-radius: $br-lg;
+  box-shadow: $box-shadow;
+  min-height: 53.8rem;
+  padding: 4rem;
+  width: 48.6rem;
+  @include flex-column(flex-start, center);
+
+  @include tablet {
+    min-height: 48rem;
+    padding: map.get($spacing, sm);
+    width: 100%;
+  }
+
+  &__img {
+    height: auto;
+  }
+
+  &__heading {
+    font-size: $fs-xl;
+    letter-spacing: -0.04em;
+    text-align: center;
+    @include heading-styles;
+    @include margin(bottom, sm);
+  }
+
+  &__description {
+    max-width: 34rem;
+    text-align: center;
+  }
+}

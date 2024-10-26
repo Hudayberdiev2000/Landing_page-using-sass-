@@ -1,0 +1,18 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.pricing {
+  padding: map.get($spacing, xxl);
+
+  &__cards {
+    @include margin('top', 'xl');
+    @include flex-row(flex-start, flex-end);
+
+    gap: map.get($spacing, md);
+
+    @include laptop {
+      // flex-direction: column;
+      @include flex-column(flex-start, center);
+    }
+  }
+}

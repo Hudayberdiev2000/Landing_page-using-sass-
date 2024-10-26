@@ -20,4 +20,13 @@
     color: $black;
     padding: 0;
   }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--inverse {
+    background-color: $background-white;
+    color: $text-black;
+  }
 }

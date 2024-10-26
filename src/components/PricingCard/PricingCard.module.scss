@@ -1,0 +1,64 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.card {
+  background-color: $background-white;
+  border-radius: $br-lg;
+  box-shadow: $box-shadow;
+  color: $text-black;
+  gap: map.get($spacing, lg);
+  padding: 4rem;
+  width: 35.1rem;
+  @include flex-column;
+
+  &--inverse {
+    background-color: $background-black;
+    color: $text-white;
+  }
+
+  &__header {
+    @include flex-row(space-between, center);
+  }
+
+  &__title {
+    color: #6f6c90;
+    font-size: $fs-md;
+    font-weight: $fw-bold;
+    letter-spacing: -0.031em;
+  }
+
+  &__popular {
+    background: linear-gradient(
+      90deg,
+      #dd7dff 0%,
+      #e1cd86 29.5%,
+      #8bcb92 51%,
+      #71c2ef 76.5%,
+      #3bffff 100%
+    );
+    background-clip: text;
+    border: 1px solid $white-60;
+    border-radius: $br-md;
+    color: transparent;
+    padding: map.get($spacing, xxs) map.get($spacing, xs);
+  }
+
+  &__price {
+    font-size: $fs-3Xl;
+    font-weight: $fw-bold;
+    letter-spacing: -0.06em;
+    @include margin('right', 'xxxs');
+  }
+
+  &__features {
+    @include flex-column;
+
+    gap: 2rem;
+  }
+
+  &__feature {
+    @include flex-row(start, center);
+
+    gap: map.get($spacing, sm);
+  }
+}

@@ -2,12 +2,35 @@
 @import '../../sass/all';
 
 .showcase {
-  &__container {
-    @include padding('top', 'xxxl');
+  background: $gradient-white-silver;
+  overflow-x: clip;
+  padding: map.get($spacing, 'xxxl') 0;
+
+  &__images {
+    margin: map.get($spacing, lg) 0;
+    position: relative;
   }
 
-  &__img {
+  &__product-image {
     height: auto;
-    margin-top: map.get($spacing, lg);
+  }
+
+  &__tube-image,
+  &__pyramid-image {
+    position: absolute;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__tube-image {
+    bottom: 6.6rem;
+    left: -14.1rem;
+  }
+
+  &__pyramid-image {
+    right: -15.1rem;
+    top: 9.7rem;
   }
 }
