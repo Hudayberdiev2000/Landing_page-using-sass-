@@ -2,8 +2,7 @@
 @import '../../sass/all';
 
 .testimonials {
-  $this: &;
-
+  background-color: $background-white;
   padding: map.get($spacing, 'xxl') 0;
 
   &__container {

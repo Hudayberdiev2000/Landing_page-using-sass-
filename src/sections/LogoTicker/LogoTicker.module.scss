@@ -2,6 +2,8 @@
 @import '../../sass/all';
 
 .ticker {
+  background-color: $background-white;
+
   &__container {
     padding: map.get($spacing, 'xl');
   }

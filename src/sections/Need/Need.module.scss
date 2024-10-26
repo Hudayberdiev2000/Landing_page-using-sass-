@@ -2,6 +2,7 @@
 @import '../../sass/all';
 
 .need {
+  background-color: $background-white;
   padding: map.get($spacing, xxxl) 0;
 
   &__cards {

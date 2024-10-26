@@ -1,0 +1,63 @@
+@use 'sass:map';
+@import '../../sass/all';
+
+.footer {
+  background-color: $background-black;
+  color: $text-white;
+  font-size: $fs-xs;
+  padding: map.get($spacing, xl);
+  text-align: center;
+
+  &__container {
+    @include flex-column(flex-start, center);
+
+    gap: map.get($spacing, md);
+  }
+
+  &__logo {
+    display: flex;
+    position: relative;
+
+    &:before {
+      background: linear-gradient(
+        to right,
+        #f87bff,
+        #fb92cf,
+        #ffdd9b,
+        #c2f0b1,
+        #2fd8fe
+      );
+      bottom: 0;
+      content: '';
+      display: block;
+      filter: blur(6px);
+      height: 90%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &__logo-img {
+    position: relative;
+  }
+
+  &__pages {
+    @include center-flex;
+
+    gap: map.get($spacing, md);
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__page:hover {
+    text-decoration: underline;
+  }
+
+  &__social-medias {
+    display: flex;
+    gap: map.get($spacing, md);
+  }
+}
