@@ -13,6 +13,10 @@
   &__heading {
     @include heading-styles;
     @include margin('top', 'md');
+
+    @include tablet {
+      font-size: $fs-2Xl;
+    }
   }
 
   &__cards {

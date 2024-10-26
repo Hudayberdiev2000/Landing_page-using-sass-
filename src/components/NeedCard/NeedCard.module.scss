@@ -21,10 +21,10 @@
   }
 
   &__heading {
-    font-size: $fs-xl;
     letter-spacing: -0.04em;
     text-align: center;
-    @include heading-styles;
+
+    @include heading-styles('hsdf');
     @include margin(bottom, sm);
   }
 

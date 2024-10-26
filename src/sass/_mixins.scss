@@ -66,8 +66,10 @@
 
   @if $type == 'h1' {
     font-size: map.get($fs, 4Xl);
-  } @else {
+  } @else if $type == 'h2' {
     font-size: map.get($fs, 3Xl);
+  } @else {
+    font-size: map.get($fs, xl);
   }
 }
 
